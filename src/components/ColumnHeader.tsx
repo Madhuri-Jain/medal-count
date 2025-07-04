@@ -1,25 +1,36 @@
 import type { SortType, ColumnHeaderProps } from '../types';
+import { getMedalColor } from '../utils/getMedalColor';
 
 export const ColumnHeader = ({ sortBy, onSortChange }: ColumnHeaderProps) => {
     const headers: SortType[] = ['gold', 'silver', 'bronze', 'total'];
 
     return (
         <thead>
-            <tr className="bg-gray-200 text-left">
-                <th className="p-2 border">Rank</th>
-                <th className="p-2 border">Flag</th>
-                <th className="p-2 border">Country</th>
+            <tr className="bg-gray-200 text-left text-gray-00 dark:text-gray-800">
+                <th></th>
+                <th></th>
+                <th className="px-15"></th>
                 {headers.map((type) => (
                     <th
                         key={type}
-                        className={`p-2 border cursor-pointer select-none hover:bg-gray-300 ${
+                        title={`Sort by ${type} medals`}
+                        className={`p-2 cursor-pointer select-none hover:bg-gray-300 ${
                             sortBy === type
-                                ? 'bg-blue-100 dark:bg-blue-900 text-blue-800 font-semibold'
+                                ? 'border-t-4 border-gray-500 font-semibold  dark:border-blue-500'
                                 : ''
                         }`}
                         onClick={() => onSortChange(type)}
                     >
-                        {type.toUpperCase()}
+                        {type === 'total' ? (
+                            type.toUpperCase()
+                        ) : (
+                            <>
+                                <div
+                                    className={`w-10 h-10 rounded-full ${getMedalColor(type)}`}
+                                    aria-hidden
+                                ></div>
+                            </>
+                        )}
                     </th>
                 ))}
             </tr>

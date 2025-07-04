@@ -43,11 +43,13 @@ export default function MedalTablePage() {
             {error && <p className="text-center text-red-500">{error}</p>}
 
             {!loading && !error && (
-                <MedalTable
-                    countries={data}
-                    sortBy={sortBy}
-                    onSortChange={handleSortChange}
-                />
+                <div className="max-w-2xl mx-auto px-2">
+                    <MedalTable
+                        countries={data}
+                        sortBy={sortBy}
+                        onSortChange={handleSortChange}
+                    />
+                </div>
             )}
         </>
     );
