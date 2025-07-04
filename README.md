@@ -112,14 +112,13 @@ npm run dev
 
 - I have also implemented an additional layer of tie-breaking logic in the sorting.
   For example, when sorting by bronze medals, gold is used as the first tie breaker.
-
-If both bronze and gold counts are the same between countries, I added a further tie breaker based on the total medal count to resolve the tie.
+- If both bronze and gold counts are the same between countries, I added a further tie breaker based on the total medal count to resolve the tie.
 
 This ensures consistent and deterministic ranking even in edge cases.
 
 ### Light & Dark Mode
 
--The app now supports both light and dark themes using Tailwind's dark mode class. It automatically respects the user's system preference, with smooth UI transitions between themes for better accessibility and user comfort.
+- The app now supports both light and dark themes using Tailwind's dark mode class. It automatically respects the user's system preference, with smooth UI transitions between themes for better accessibility and user comfort.
 
 ---
 
@@ -127,12 +126,12 @@ This ensures consistent and deterministic ranking even in edge cases.
 
 #### 1. Add Unit Tests with Vitest
 
-I planned to write unit test cases for core logic (e.g., sorting, utility functions) using Vitest. This would improve code reliability and allow for safe future refactoring.
+- I planned to write unit test cases for core logic (e.g., sorting, utility functions) using Vitest.  This would improve code reliability and allow for safe future refactoring.
 
-#### 2.Define a Centralized Color Palette
+#### 2. Define a Centralized Color Palette
 
-Rather than hardcoding Tailwind color classes in components, I intended to define a structured color palette (possibly using CSS variables or Tailwind theme extensions). This would enhance consistency and scalability when working with styles, especially if the UI needs to support dark/light modes or theming in the future.
+- Rather than hardcoding Tailwind color classes in components, I intended to define a structured color palette (possibly using CSS variables or Tailwind theme extensions). This would enhance consistency and scalability when working with styles, especially if the UI needs to support dark/light modes or theming in the future.
 
-#### 3.Add Tooltips for Medal Headers
+#### 3. Add Tooltips for Medal Headers
 
-I wanted to add tooltips to the medal-colored headers in the table. On hover, these would clearly indicate which medal type (Gold, Silver, or Bronze) the column represents. This would improve accessibility and usability, especially for color-blind users.
+- I wanted to add tooltips to the medal-colored headers in the table. On hover, these would clearly indicate which medal type (Gold, Silver, or Bronze) the column represents. This would improve accessibility and usability, especially for color-blind users.
