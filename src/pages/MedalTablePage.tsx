@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useMedalData } from '../hooks/useMedalData';
 import type { SortType } from '../types';
+import { MedalTable } from '../components/MedalTable';
 
 export default function MedalTablePage() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -21,7 +22,9 @@ export default function MedalTablePage() {
             )}
             {error && <p className="text-center text-red-500">{error}</p>}
 
-            {!loading && !error && <p>{JSON.stringify(data)}</p>}
+            {!loading && !error && (
+                <MedalTable countries={data} sortBy={sortBy} />
+            )}
         </>
     );
 }

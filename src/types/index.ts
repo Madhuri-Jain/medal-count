@@ -6,3 +6,8 @@ export interface CountryMedals {
 }
 
 export type SortType = 'gold' | 'silver' | 'bronze' | 'total';
+
+export interface MedalTableProps {
+    countries: CountryMedals[];
+    sortBy?: SortType;
+}
