@@ -19,11 +19,10 @@ A React + TypeScript mini app to display Olympic medal counts by country.
 
 ## Tech Stack
 
-- [Vite](https://vitejs.dev/) + [React](https://reactjs.org/) + [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/) + [React](https://reactjs.org/) + [TypeScript](https://www.typescriptlang.org/) + [TailwindCSS](https://tailwindcss.com/)
 - ESLint + Prettier for code quality
 - Husky for Git hooks (format & lint on commit)
 - No backend or SSR — purely client-side app
-- TailwindCSS for styling
 
 ---
 
