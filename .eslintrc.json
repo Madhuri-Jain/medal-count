@@ -1,0 +1,12 @@
+{
+    "extends": [
+        "react-app",
+        "plugin:react-hooks/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "prettier"
+    ],
+    "plugins": ["@typescript-eslint", "react"],
+    "rules": {
+        "react/react-in-jsx-scope": "off"
+    }
+}
