@@ -1,6 +1,6 @@
-import type { SortType } from '../types';
+import type { SortType, ColumnHeaderProps } from '../types';
 
-export const ColumnHeader = () => {
+export const ColumnHeader = ({ sortBy, onSortChange }: ColumnHeaderProps) => {
     const headers: SortType[] = ['gold', 'silver', 'bronze', 'total'];
 
     return (
@@ -12,7 +12,12 @@ export const ColumnHeader = () => {
                 {headers.map((type) => (
                     <th
                         key={type}
-                        className="p-2 border cursor-pointer hover:bg-gray-300"
+                        className={`p-2 border cursor-pointer select-none hover:bg-gray-300 ${
+                            sortBy === type
+                                ? 'bg-blue-100 dark:bg-blue-900 text-blue-800 font-semibold'
+                                : ''
+                        }`}
+                        onClick={() => onSortChange(type)}
                     >
                         {type.toUpperCase()}
                     </th>

@@ -1,12 +1,32 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useMedalData } from '../hooks/useMedalData';
 import type { SortType } from '../types';
 import { MedalTable } from '../components/MedalTable';
+import { useSearchParams } from 'react-router-dom';
 
 export default function MedalTablePage() {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const [searchParams, setSearchParams] = useSearchParams();
     const [sortBy, setSortBy] = useState<SortType>('gold');
+
     const { data, error, loading } = useMedalData();
+
+    useEffect(() => {
+        const sort = searchParams.get('sort') as SortType;
+        const isValidSort = ['gold', 'silver', 'bronze', 'total'].includes(
+            sort
+        );
+
+        if (isValidSort) {
+            setSortBy(sort);
+        } else {
+            setSortBy('gold');
+        }
+    }, [searchParams]);
+
+    const handleSortChange = (newSort: SortType) => {
+        setSortBy(newSort); // update local state for immediate UI change
+        setSearchParams({ sort: newSort }); // sync to URL
+    };
 
     return (
         <>
@@ -23,7 +43,11 @@ export default function MedalTablePage() {
             {error && <p className="text-center text-red-500">{error}</p>}
 
             {!loading && !error && (
-                <MedalTable countries={data} sortBy={sortBy} />
+                <MedalTable
+                    countries={data}
+                    sortBy={sortBy}
+                    onSortChange={handleSortChange}
+                />
             )}
         </>
     );
