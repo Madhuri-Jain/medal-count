@@ -51,15 +51,24 @@ npm run dev
 
 - A default height of 17px was used for flag images to ensure consistent alignment within the table rows. This design choice helped maintain a clean, compact layout and prevented the flags from disrupting the visual flow of the content.This tradeoff prioritized clean table layout over full-size flag accuracy. If needed, a scalable approach using inline SVGs or separate images could be introduced later.
 
-## UI Enhancements
+## Enhancements beyond given requirement
 
-#### Sorting Indicator Subheading
+### Sorting Indicator Subheading
 
-A subheading is displayed above the table to clearly show which medal type the data is currently sorted by. This helps users understand the current sort context at a glance.
+- A subheading is displayed above the table to clearly show which medal type the data is currently sorted by. This helps users understand the current sort context at a glance.
 
-#### Light & Dark Mode
+### Additional layer of tie-breaking logic in the sorting
 
-The app now supports both light and dark themes using Tailwind's dark mode class. It automatically respects the user's system preference, with smooth UI transitions between themes for better accessibility and user comfort.
+- I have also implemented an additional layer of tie-breaking logic in the sorting.
+For example, when sorting by bronze medals, gold is used as the first tie breaker.
+
+If both bronze and gold counts are the same between countries, I added a further tie breaker based on the total medal count to resolve the tie.
+
+This ensures consistent and deterministic ranking even in edge cases.
+
+### Light & Dark Mode
+
+-The app now supports both light and dark themes using Tailwind's dark mode class. It automatically respects the user's system preference, with smooth UI transitions between themes for better accessibility and user comfort.
 
 ## Future Improvements
 
