@@ -24,12 +24,10 @@ export const ColumnHeader = ({ sortBy, onSortChange }: ColumnHeaderProps) => {
                         {type === 'total' ? (
                             type.toUpperCase()
                         ) : (
-                            <>
-                                <div
-                                    className={`w-10 h-10 rounded-full ${getMedalColor(type)}`}
-                                    aria-hidden
-                                ></div>
-                            </>
+                            <div
+                                className={`w-10 h-10 rounded-full ${getMedalColor(type)}`}
+                                aria-hidden
+                            ></div>
                         )}
                     </th>
                 ))}
