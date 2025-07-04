@@ -96,6 +96,12 @@ npm run dev
 
 - Integrated ESLint, Prettier, and Husky to enforce consistent formatting and catch issues early via pre-commit hooks. This setup supports fast, clean, and reliable development workflows.
 
+### Use of React Router Library
+
+- I chose to use React Router primarily to manage the query parameter for sorting (i.e., `?sort=gold`, `?sort=silver`, etc.), as required by the task. While React Router was not strictly necessary—since the app does not require multi-page routing. Though using it allowed for clean and reliable management of URL search parameters without introducing additional custom hooks or manual parsing logic.
+
+- Ideally, for such a minimal use case, I would have opted for the native `URLSearchParams` API directly. However, to reduce complexity, avoid handling edge cases manually, and stay within the project deadline, I decided to use React Router to streamline this implementation.
+
 ### Fixed Flag Height for Consistent Layout
 
 - A default height of 17px was used for flag images to ensure consistent alignment within the table rows. This design choice helped maintain a clean, compact layout and prevented the flags from disrupting the visual flow of the content.This tradeoff prioritized clean table layout over full-size flag accuracy. If needed, a scalable approach using inline SVGs or separate images could be introduced later.
@@ -126,7 +132,7 @@ This ensures consistent and deterministic ranking even in edge cases.
 
 #### 1. Add Unit Tests with Vitest
 
-- I planned to write unit test cases for core logic (e.g., sorting, utility functions) using Vitest.  This would improve code reliability and allow for safe future refactoring.
+- I planned to write unit test cases for core logic (e.g., sorting, utility functions) using Vitest. This would improve code reliability and allow for safe future refactoring.
 
 #### 2. Define a Centralized Color Palette
 
