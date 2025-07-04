@@ -17,3 +17,9 @@ export interface ColumnHeaderProps {
     sortBy: SortType;
     onSortChange: (type: SortType) => void;
 }
+
+export interface MedalRowProps {
+    country: CountryMedals;
+    index: number;
+    flagIndex: number;
+}
