@@ -1,8 +1,7 @@
 function App() {
-
   return (
     <>
-      <h1>Medal Count</h1>
+      <h1 className="text-red-200 dark:text-amber-300">Medal Count</h1>
     </>
   )
 }
