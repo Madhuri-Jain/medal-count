@@ -1,19 +1,10 @@
-import { useMedalData } from './hooks/useMedalData';
+import MedalTablePage from './pages/MedalTablePage';
 
 function App() {
-    const { data, error, loading } = useMedalData();
     return (
-        <>
-            <h1 className="text-red-200 dark:text-amber-300">Medal Count</h1>
-            {/* testing data load */}
-            {loading ? (
-                <p>Loading...</p>
-            ) : error ? (
-                <p>{error}</p>
-            ) : (
-                <p>{JSON.stringify(data)}</p>
-            )}
-        </>
+        <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors">
+            <MedalTablePage />
+        </div>
     );
 }
 

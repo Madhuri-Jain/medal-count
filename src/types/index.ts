@@ -4,3 +4,5 @@ export interface CountryMedals {
     silver: number;
     bronze: number;
 }
+
+export type SortType = 'gold' | 'silver' | 'bronze' | 'total';
