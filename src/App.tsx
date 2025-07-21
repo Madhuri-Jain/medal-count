@@ -1,8 +1,10 @@
+import MedalTablePage from './pages/MedalTablePage';
+
 function App() {
     return (
-        <>
-            <h1 className="text-red-200 dark:text-amber-300">Medal Count</h1>
-        </>
+        <main className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors">
+            <MedalTablePage />
+        </main>
     );
 }
 
